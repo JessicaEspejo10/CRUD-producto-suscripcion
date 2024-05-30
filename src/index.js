@@ -28,11 +28,11 @@ app.set('view engine', '.hbs');//especificar el manejador de plantillas
 /* --------------------------- Middlewares (Morgan) ------------------------- */
 app.use(morgan('dev')); //leer peticion realizada desde el navegador
 app.use(express.urlencoded({ extended: false })); //apagar la codificacion de url para facilitar la lectura de la informacion
-app.use(express.json); //recibir informacion en formato json
+app.use(express.json()); //recibir informacion en formato json
 
 /* --------------------------------- Routes --------------------------------- */
 app.get('/', (req,res) => {
-    res.json({"message": "hola mundo"});
+    res.render('index');
 });//ruta de prueba
 
 /* ------------------------------ Public files ------------------------------ */
