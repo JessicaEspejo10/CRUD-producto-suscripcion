@@ -1,5 +1,6 @@
 /* --------------------------- Import dependencies -------------------------- */
 import express from 'express'; //framework
+import morgan from 'morgan';
 
 import {join,dirname} from 'path'; //metodos del modulo path para concatenar info, identificar directorios
 import {fileURLToPath} from 'url'; //metodos del modulo url para obtener la url principal del proyecto
@@ -25,13 +26,17 @@ app.engine('.hbs', engine({
 app.set('view engine', '.hbs');//especificar el manejador de plantillas
 
 /* --------------------------- Middlewares (Morgan) ------------------------- */
-
+app.use(morgan('dev')); //leer peticion realizada desde el navegador
+app.use(express.urlencoded({ extended: false })); //apagar la codificacion de url para facilitar la lectura de la informacion
+app.use(express.json); //recibir informacion en formato json
 
 /* --------------------------------- Routes --------------------------------- */
-
+app.get('/', (req,res) => {
+    res.json({"message": "hola mundo"});
+});//ruta de prueba
 
 /* ------------------------------ Public files ------------------------------ */
-
+app.use(express.static(join(__dirname,'public')));
 
 /* ------------------------------- Run server ------------------------------- */
 app.listen(app.get('port'), () => {
