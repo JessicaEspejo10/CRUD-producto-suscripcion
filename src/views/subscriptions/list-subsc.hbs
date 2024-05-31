@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-upper p-2"> Lista de Suscriptores </h3>
+
+        {{#if suscribers}}
+
+        <table class="text-center">
+            <thead>
+                <tr class="table-light">
+                    <th scope="column"> Nombre </th>
+                    <th scope="column"> Apellido </th>
+                    <th scope="column"> Tipo de Suscripción </th>
+                    <th scope="column"> Valor ($) </th>
+                    <th scope="column"> Fecha de Inicio </th>
+                    <th scope="column"> Fecha de Finalización </th>
+                    <th scope="column"> </th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                {{#each suscribers}}
+                <tr>
+                    <td> {{name}} </td>
+                    <td> {{lastname}} </td>
+                    <td> {{suscription_type}} </td>
+                    <td> {{price}} </td>
+                    <td> {{billing_date}} </td>
+                    <td> {{expiration_date}} </td>
+                    <td>
+                        <div class="btn-group m-2">
+                            <a href="/edit-subsc/{{id}}" class="btn btn-warning p-2">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+                            <a href="/delete-subsc/{{id}}" class="btn btn-danger p-2">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                {{/each}}
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6"></td>
+                    <td>
+                        <a href="" class="btn btn-success btn-lg mt-2">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+                
+            </tfoot>
+        </table>
+
+        {{else}}
+        <div class="card text-center text-bg-light mx-auto mt-3 p-3">
+                
+                <h3 class="card-title"> 
+                    <i class="fa-solid fa-triangle-exclamation fa-lg" style="color: #FFD43B;"></i>
+                    No existen suscriptores registrados 
+                </h3>
+            
+            <div class="card-body">
+                <p> Presiona el botón para realizar una suscripción </p>
+                <a href="/add-subsc" class="btn btn-success"> Suscribirme </a>
+
+            </div>
+        </div>
+
+        {{/if}}
+    </div>
+</div>

@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import {join,dirname} from 'path'; //metodos del modulo path para concatenar info, identificar directorios
 import {fileURLToPath} from 'url'; //metodos del modulo url para obtener la url principal del proyecto
 import {engine} from 'express-handlebars'; //metodo para configurar el uso de manejo de plantillas
+import subscRouter from './routes/subscriptions.routes.js';
 
 /* ----------------- Framework and variables Initialization ----------------- */
 const app = express();
@@ -33,7 +34,10 @@ app.use(express.json()); //recibir informacion en formato json
 /* --------------------------------- Routes --------------------------------- */
 app.get('/', (req,res) => {
     res.render('index');
-});//ruta de prueba
+});
+
+app.use(subscRouter);
+
 
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname,'public')));
