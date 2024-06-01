@@ -72,4 +72,14 @@ subscRouter.post('/edit-subsc/:id', async(req,res) => {
     }
 });
 
+subscRouter.get('/delete-subsc/:id', async(req,res) => {
+    try{
+        const {id} = req.params
+        await pool.query('DELETE FROM suscribers WHERE id=?', [id]);
+        res.redirect('/list-subsc');
+    }catch(error){
+        res.status(500).json({message: error.message});
+    };
+});
+
 export default subscRouter;
