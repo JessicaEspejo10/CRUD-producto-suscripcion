@@ -1,0 +1,52 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase"> Modificar suscripción </h3>
+                </div>
+                <div class="card-body">
+                    
+
+                    <form action="/edit-subsc/{{suscriber.id}}" method="post" >
+                    
+                        <div class="input-group mt-2">
+                            <label for="subscname" class="input-group-text"> Nombre Persona </label>
+                            <input class="form-control" type="text" name="subscname" id="subscname"
+                                value="{{suscriber.subscname}}" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="lastname" class="input-group-text"> Apellido Persona </label>
+                            <input class="form-control" type="text" name="lastname" id="lastname"
+                                value="{{suscriber.lastname}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="email" class="input-group-text"> Correo electrónico </label>
+                            <input class="form-control" type="email" name="email" id="email"
+                                value="{{suscriber.email}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="suscription_type" class="input-group-text"> Suscripción </label>
+                            <input class="form-control" type="text" name="suscription_type" id="suscription_type"
+                                value="{{suscriber.suscription_type}}" readonly>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="value" class="input-group-text"> Precio </label>
+                            <input class="form-control" type="text" name="value" id="value" value="{{suscriber.value}}" readonly>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="billing_date" class="input-group-text"> Fecha de inicio </label>
+                            <input class="form-control" type="date" name="billing_date" id="billing_date" value="{{suscriber.billing_date}}">
+                        </div>
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success" > Actualizar </button>       
+                                          
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
