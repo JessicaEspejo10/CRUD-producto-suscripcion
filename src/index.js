@@ -7,7 +7,7 @@ import {fileURLToPath} from 'url'; //metodos del modulo url para obtener la url 
 import {engine} from 'express-handlebars'; //metodo para configurar el uso de manejo de plantillas
 import subscRouter from './routes/subscriptions.routes.js';
 import prodRouter from './routes/products.routes.js';
-
+import stRouter from './routes/static.routes.js'
 /* ----------------- Framework and variables Initialization ----------------- */
 const app = express();
 
@@ -39,7 +39,7 @@ app.get('/', (req,res) => {
 
 app.use(subscRouter);
 app.use(prodRouter);
-
+app.use(stRouter);
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname,'public')));
 
