@@ -3,31 +3,37 @@
 
     {{#if products}}
 
-    <div class="card-group">
-
+    <div class="row">
         {{#each products}}
-        <div class="card m-2">
-            <div class="row row-cols-1  ">
-                <div class="col-md-4">
-                    <img src="" class="img-fluid" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="p-2">{{prodname}} - $ {{price}}</h5>
-                        <p class="fw-light"><b> Talla:</b> {{size}} <br>
-                            <b> Color:</b> {{color}} <br>
-                            <b> Brand:</b> {{brand}}
-                        </p>
-                        <p class="card-text fw-lighter">{{description}}</p>
-                        <a href="/edit-prod/{{id}}" class="card-link fw-light">Editar</a>
-                        <a href="/delete-prod/{{id}}" class="card-link fw-light">Eliminar</a>
+        <div class="col-md-6">
+            <div class="card m-2">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="" class="img-fluid" alt="...">
                     </div>
-                    
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="p-2">{{prodname}} - $ {{price}}</h5>
+                            <p class="fw-light"><b> Talla:</b> {{size}} <br>
+                                <b> Brand:</b> {{brand}}<br>
+                                <b> Color:</b> <span style="background-color: {{color}}; width: 40px; height: 17px; display: inline-block;"></span>      
+                            </p>
+                            <p class="card-text fw-lighter">{{description}}</p>
+                            <a href="/edit-prod/{{id}}" class="card-link fw-light">Editar</a>
+                            <a href="/delete-prod/{{id}}" class="card-link fw-light">Eliminar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         {{/each}}
+    </div>
 
+    <div>
+        <a href="/add-prod" class="btn btn-success btn-lg mt-2" style="float: right;">
+            <i class="fa-solid fa-circle-plus" style="color: #ffffff; display: inline;"></i>
+            <p style="display: inline;"><small>Agregar producto</small></p>
+        </a>
     </div>
 
     {{else}}
@@ -42,5 +48,4 @@
         </div>
     </div>
     {{/if}}
-</div>
 </div>
