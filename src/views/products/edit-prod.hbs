@@ -1,0 +1,51 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase"> Modificar productos </h3>
+                </div>
+                <div class="card-body">
+                    
+
+                    <form action="/edit-prod/{{product.id}}" method="post" >
+                    
+                        <div class="input-group mt-2">
+                            <label for="prodname" class="input-group-text"> Producto </label>
+                            <input class="form-control" type="text" name="prodname" id="prodname"
+                                value="{{product.prodname}}" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="size" class="input-group-text"> Tallas disponibles </label>
+                            <input class="form-control" type="text" name="size" id="size"
+                                value="{{product.size}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="color" class="input-group-text"> Color </label>
+                            <input class="form-control" type="color" name="color" id="color" value="{{product.color}}"
+                                 required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="brand" class="input-group-text"> Marca </label>
+                            <input class="form-control" type="text" name="brand" id="brand"
+                                value="{{product.brand}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="price" class="input-group-text"> Precio </label>
+                            <input class="form-control" type="number" name="price" id="price" value="{{product.price}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="description" class="input-group-text"> Detalle </label>
+                            <input class="form-control" type="textarea" name="description" id="description" value="{{product.description}}">
+                        </div>
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success" > Agregar producto </button>                               
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

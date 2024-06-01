@@ -34,5 +34,37 @@ prodRouter.post('/add-prod',  async(req,res) => {
     }
 });
 
+prodRouter.get('/edit-prod/:id', async(req,res) => {
+    try{
+        const{id} = req.params
+        
+        const [product] = await pool.query('SELECT * FROM products WHERE id = ?', [id]);
+        
+        const productEdit = product[0];
+       
+        res.render('products/edit-prod',{product: productEdit});
+
+    }catch(error){
+        res.status(500).json({message: error.message});
+    };
+});
+
+prodRouter.post('/edit-prod/:id', async(req,res) => {
+    try{
+        const{id} = req.params
+        const{prodname,size,color,brand,description,price} = req.body
+        
+        let editProduct =  {
+            prodname,size,color,brand,description,price
+            }
+        
+        await pool.query('UPDATE products SET ? WHERE id = ?', [editProduct,id]);
+        res.redirect('/list-prod');
+
+    }catch(error){
+        res.status(500).json({message: error.message});
+    }
+});
+
 
 export default prodRouter;
