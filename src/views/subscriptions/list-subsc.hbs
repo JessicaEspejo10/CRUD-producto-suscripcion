@@ -9,22 +9,22 @@
                 <tr class="table-light">
                     <th scope="column"> Nombre </th>
                     <th scope="column"> Apellido </th>
+                    <th scope="column"> Correo Electrónico </th>
                     <th scope="column"> Tipo de Suscripción </th>
                     <th scope="column"> Valor ($) </th>
                     <th scope="column"> Fecha de Inicio </th>
-                    <th scope="column"> Fecha de Finalización </th>
-                    <th scope="column"> </th>
+                    <th scope="column"></th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
                 {{#each suscribers}}
                 <tr>
-                    <td> {{name}} </td>
+                    <td> {{subscname}} </td>
                     <td> {{lastname}} </td>
+                    <td> {{email}} </td>
                     <td> {{suscription_type}} </td>
-                    <td> {{price}} </td>
+                    <td> {{value}} </td>
                     <td> {{billing_date}} </td>
-                    <td> {{expiration_date}} </td>
                     <td>
                         <div class="btn-group m-2">
                             <a href="/edit-subsc/{{id}}" class="btn btn-warning p-2">
@@ -43,7 +43,7 @@
                 <tr>
                     <td colspan="6"></td>
                     <td>
-                        <a href="" class="btn btn-success btn-lg mt-2">
+                        <a href="/show-subsc" class="btn btn-success btn-lg mt-2">
                             <i class="fa-solid fa-user-plus"></i>
                         </a>
                     </td>
@@ -61,7 +61,7 @@
                 </h3>            
             <div class="card-body">
                 <p> Presiona el botón para realizar una suscripción </p>
-                <a href="/add-subsc" class="btn btn-success"> Suscribirme </a>
+                <a href="/show-subsc" class="btn btn-success"> Suscribirme </a>
             </div>
         </div>
 

@@ -2,23 +2,30 @@
     <div class="row mt-5">
         <h3 class="text-center text-upper p-2"> Subscripciones disponibles </h3>
         <div class="row mx-auto g-3" style="width: 800px">
-            
+
             <div class="col">
                 <div class="card mx-auto text-center h-100">
                     <h5 class="card-header"> Gratis </h5>
                     <div class="card-body">
                         <h4 class="card-title"> <b> $0 </b>/mes </h4>
                         <p class="card-text"> Prueba gratis por 7 días </p>
-                        
+
                     </div>
                     <div class="card-footer">
                         <h6>Incluye:</h6>
                         <small class="text-body-secondary ">Información de viajes
                             <br> Recomendación de productos
-                            <br><br><br><br><br> 
+                            <br><br><br><br><br>
                         </small>
                         <div class="m-2">
-                            <a href="/add-subsc?price=0" class="btn btn-success"> Suscribirme </a>
+                            <a id="setValueFree" class="btn btn-success"> Suscribirme </a>
+                            <script>
+                                document.getElementById('setValueFree').addEventListener('click', () => {
+                                    const value = '0';
+                                    const suscription_type = 'Free';
+                                    window.location.href = `/add-subsc?value=${value}&suscription_type=${suscription_type}`;
+                                });
+                            </script>
                         </div>
 
                     </div>
@@ -31,7 +38,7 @@
                     <div class="card-body">
                         <h4 class="card-title"> <b>$25.000</b>/mes </h4>
                         <p class="card-text"> Paga mes a mes </p>
-                        
+
                     </div>
                     <div class="card-footer">
                         <h6>Incluye:</h6>
@@ -39,14 +46,21 @@
                             <br> Recomendación de productos
                             <br> Descuentos en productos
                             <br> Envíos gratis
-                            <br><br> <br>    
+                            <br><br> <br>
                         </small>
-                                                <div class="m-2">
-                            <a href="/add-subsc?price=0" class="btn btn-success"> Suscribirme </a>
+                        <div class="m-2">
+                            <a id="setValuePremium" class="btn btn-success"> Suscribirme </a>
+                            <script>
+                                document.getElementById('setValuePremium').addEventListener('click', () => {
+                                    const value = '25000';
+                                    const suscription_type = 'Premium';
+                                    window.location.href = `/add-subsc?value=${value}&suscription_type=${suscription_type}`;
+                                });
+                            </script>
                         </div>
 
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -56,7 +70,7 @@
                     <div class="card-body">
                         <h4 class="card-title"> <b> $200.000</b>/año </h4>
                         <p class="card-text"> Plan full anual </p>
-                       
+
                     </div>
                     <div class="card-footer">
                         <h6>Incluye:</h6>
@@ -67,12 +81,19 @@
                             <br> Información de actividades
                             <br> Asesoria personalizada
                         </small>
-                                                <div class="m-2">
-                            <a href="/add-subsc?price=0" class="btn btn-success"> Suscribirme </a>
+                        <div class="m-2">
+                            <a id="setValueGold" class="btn btn-success"> Suscribirme </a>
+                            <script>
+                                document.getElementById('setValueGold').addEventListener('click', () => {
+                                    const value = '200000';
+                                    const suscription_type = 'Gold';
+                                    window.location.href = `/add-subsc?value=${value}&suscription_type=${suscription_type}`;
+                                });
+                            </script>
                         </div>
 
                     </div>
-                    
+
                 </div>
             </div>
         </div>
