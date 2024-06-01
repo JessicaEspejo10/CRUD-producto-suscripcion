@@ -9,7 +9,8 @@ CREATE TABLE products(
     color VARCHAR(50) NOT NULL,
     brand VARCHAR(50) NOT NULL,
     description VARCHAR(200) NOT NULL,
-    price INT NOT NULL
+    price INT NOT NULL,
+    image VARCHAR(150)
 );
 
 CREATE TABLE suscribers(

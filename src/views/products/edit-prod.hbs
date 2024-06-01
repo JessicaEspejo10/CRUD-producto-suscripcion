@@ -8,7 +8,7 @@
                 <div class="card-body">
                     
 
-                    <form action="/edit-prod/{{product.id}}" method="post" >
+                    <form action="/edit-prod/{{product.id}}" method="post" enctype="multipart/form-data">
                     
                         <div class="input-group mt-2">
                             <label for="prodname" class="input-group-text"> Producto </label>
@@ -39,9 +39,18 @@
                             <label for="description" class="input-group-text"> Detalle </label>
                             <input class="form-control" type="textarea" name="description" id="description" value="{{product.description}}">
                         </div>
-                        <div class="form-group mt-4 d-grid gap-2">
-                            <button class="btn btn-success" > Agregar producto </button>                               
+                        <div class="input-group mt-2">
+                                <input class="form-control" type="file" name="file" id="file" autofocus>
                         </div>
+                        {{#if product.image}}
+                            <div class="input-group mt-2">
+                                    <img src="/uploads/{{product.image}}" class="card-img-top mx-auto m-2" style="width: 150px; height: 150px; display:block ">
+                            </div>
+                        {{/if}}
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success" > Actualizar producto </button>                               
+                        </div>
+                        
                     </form>
                     
                 </div>
