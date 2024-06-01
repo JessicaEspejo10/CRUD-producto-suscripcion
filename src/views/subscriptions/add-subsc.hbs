@@ -6,7 +6,9 @@
                     <h3 class="text-uppercase"> Registrar suscripción </h3>
                 </div>
                 <div class="card-body">
+                    
                     <form id="register">
+                   
                         <div class="input-group mt-2">
                             <label for="subscname" class="input-group-text"> Nombre Persona </label>
                             <input class="form-control" type="text" name="subscname" id="subscname"
@@ -18,25 +20,28 @@
                             <input class="form-control" type="text" name="lastname" id="lastname"
                                 placeholder="Ejm: Espejo" required>
                         </div>
+                   
                         <div class="input-group mt-2">
                             <label for="email" class="input-group-text"> Correo electrónico </label>
                             <input class="form-control" type="email" name="email" id="email"
                                 placeholder="Ejm: usuario@gmail.com" required>
                         </div>
+                   
                         <div class="input-group mt-2">
                             <label for="suscription_type" class="input-group-text"> Suscripción </label>
                             <input class="form-control" type="text" name="suscription_type" id="suscription_type"
                                 value="{{suscription_type}}" readonly>
                         </div>
+                   
                         <div class="input-group mt-2">
                             <label for="value" class="input-group-text"> Precio </label>
                             <input class="form-control" type="text" name="value" id="value" value="{{value}}" readonly>
                         </div>
+                   
                         <div class="input-group mt-2">
                             <label for="billing_date" class="input-group-text"> Fecha de inicio </label>
                             <input class="form-control" type="date" name="billing_date" id="billing_date" readonly>
                             <script>
-
                                 function getCurrentDate() {
                                     const today = new Date();
                                     const year = today.getFullYear();
@@ -58,10 +63,8 @@
                     <script>
                         document.getElementById('register').addEventListener('submit', function (event) {
                             event.preventDefault(); // Evitar que el formulario se envíe automáticamente
-
                             // Recoger los datos del formulario
                             const formData = new FormData(event.target);
-
                             // Enviar la solicitud POST con fetch
                             fetch('http://localhost:3000/add-subsc', {
                                 method: 'POST',

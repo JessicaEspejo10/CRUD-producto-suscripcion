@@ -4,24 +4,33 @@
     {{#if products}}
 
     <div class="row">
+        
         {{#each products}}
         <div class="col-md-6">
             <div class="card m-2">
                 <div class="row no-gutters">
+        
                     <div class="col-md-4">
                         <img src="/uploads/{{image}}" class="img-fluid rounded m-2" alt="...">
                     </div>
+        
                     <div class="col-md-8">
                         <h5 class="card-header"> {{prodname}} - $ {{price}} </h5>
                         <div class="card-body">
-                            
+
                             <p class="fw-light"><b> Talla:</b> {{size}} <br>
                                 <b> Brand:</b> {{brand}}<br>
-                                <b> Color:</b> <span style="background-color: {{color}}; width: 40px; height: 17px; display: inline-block;"></span>      
+                                <b> Color:</b> <span
+                                    style="background-color: {{color}}; width: 40px; height: 17px; display: inline-block;"></span>
                             </p>
+        
                             <p class="card-text fw-lighter">{{description}}</p>
-                            <a href="/edit-prod/{{id}}" class="btn btn-warning btn-sm"><i class="fa-solid fa-pencil"></i> Editar</a>
-                            <a href="/delete-prod/{{id}}" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Eliminar</a>
+        
+                            <a href="/edit-prod/{{id}}" class="btn btn-warning btn-sm"><i
+                                    class="fa-solid fa-pencil"></i> Editar</a>
+        
+                            <a href="/delete-prod/{{id}}" class="btn btn-danger btn-sm"><i
+                                    class="fa-solid fa-trash"></i> Eliminar</a>
                         </div>
                     </div>
                 </div>

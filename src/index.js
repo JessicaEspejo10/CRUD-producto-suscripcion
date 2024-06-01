@@ -2,9 +2,9 @@
 import express from 'express'; //framework
 import morgan from 'morgan';
 
-import {join,dirname} from 'path'; //metodos del modulo path para concatenar info, identificar directorios
-import {fileURLToPath} from 'url'; //metodos del modulo url para obtener la url principal del proyecto
-import {engine} from 'express-handlebars'; //metodo para configurar el uso de manejo de plantillas
+import { join, dirname } from 'path'; //metodos del modulo path para concatenar info, identificar directorios
+import { fileURLToPath } from 'url'; //metodos del modulo url para obtener la url principal del proyecto
+import { engine } from 'express-handlebars'; //metodo para configurar el uso de manejo de plantillas
 import subscRouter from './routes/subscriptions.routes.js';
 import prodRouter from './routes/products.routes.js';
 import stRouter from './routes/static.routes.js'
@@ -29,11 +29,11 @@ app.set('view engine', '.hbs');//especificar el manejador de plantillas
 
 /* --------------------------- Middlewares (Morgan) ------------------------- */
 app.use(morgan('dev')); //leer peticion realizada desde el navegador
-app.use(express.urlencoded({ extended: false})); //apagar la codificacion de url para facilitar la lectura de la informacion
+app.use(express.urlencoded({ extended: false })); //apagar la codificacion de url para facilitar la lectura de la informacion
 app.use(express.json()); //recibir informacion en formato json
 
 /* --------------------------------- Routes --------------------------------- */
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.render('index');
 });
 
@@ -41,7 +41,7 @@ app.use(subscRouter);
 app.use(prodRouter);
 app.use(stRouter);
 /* ------------------------------ Public files ------------------------------ */
-app.use(express.static(join(__dirname,'public')));
+app.use(express.static(join(__dirname, 'public')));
 
 /* ------------------------------- Run server ------------------------------- */
 app.listen(app.get('port'), () => {
