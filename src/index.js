@@ -6,6 +6,7 @@ import {join,dirname} from 'path'; //metodos del modulo path para concatenar inf
 import {fileURLToPath} from 'url'; //metodos del modulo url para obtener la url principal del proyecto
 import {engine} from 'express-handlebars'; //metodo para configurar el uso de manejo de plantillas
 import subscRouter from './routes/subscriptions.routes.js';
+import prodRouter from './routes/products.routes.js';
 
 /* ----------------- Framework and variables Initialization ----------------- */
 const app = express();
@@ -37,7 +38,7 @@ app.get('/', (req,res) => {
 });
 
 app.use(subscRouter);
-
+app.use(prodRouter);
 
 /* ------------------------------ Public files ------------------------------ */
 app.use(express.static(join(__dirname,'public')));

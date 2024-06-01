@@ -5,10 +5,11 @@ USE Adventure;
 CREATE TABLE products(
     id INT AUTO_INCREMENT PRIMARY KEY,
     prodname VARCHAR(50) NOT NULL,
-    location VARCHAR(50) NOT NULL,
-    observation VARCHAR(200) NOT NULL,
-    travel_date DATE NOT NULL,
-    duration INT NOT NULL
+    size VARCHAR(50) NOT NULL,
+    color VARCHAR(50) NOT NULL,
+    brand VARCHAR(50) NOT NULL,
+    description VARCHAR(200) NOT NULL,
+    price INT NOT NULL
 );
 
 CREATE TABLE suscribers(

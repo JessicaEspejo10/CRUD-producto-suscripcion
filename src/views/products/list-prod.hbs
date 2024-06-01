@@ -1,0 +1,46 @@
+<div class="container">
+    <h3 class="text-center text-upper p-5"> Lista de Productos </h3>
+
+    {{#if products}}
+
+    <div class="card-group">
+
+        {{#each products}}
+        <div class="card m-2">
+            <div class="row row-cols-1  ">
+                <div class="col-md-4">
+                    <img src="" class="img-fluid" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="p-2">{{prodname}} - $ {{price}}</h5>
+                        <p class="fw-light"><b> Talla:</b> {{size}} <br>
+                            <b> Color:</b> {{color}} <br>
+                            <b> Brand:</b> {{brand}}
+                        </p>
+                        <p class="card-text fw-lighter">{{description}}</p>
+                        <a href="/edit-prod/{{id}}" class="card-link fw-light">Editar</a>
+                        <a href="/delete-prod/{{id}}" class="card-link fw-light">Eliminar</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
+
+    {{else}}
+    <div class="card text-center text-bg-light mx-auto mt-3 p-3">
+        <h3 class="card-title">
+            <i class="fa-solid fa-triangle-exclamation fa-lg" style="color: #FFD43B;"></i>
+            No existen productos registrados
+        </h3>
+        <div class="card-body">
+            <p> Presiona el botón para ingresar un producto </p>
+            <a href="/add-prod" class="btn btn-success"> Registrar producto </a>
+        </div>
+    </div>
+    {{/if}}
+</div>
+</div>
