@@ -66,5 +66,14 @@ prodRouter.post('/edit-prod/:id', async(req,res) => {
     }
 });
 
+prodRouter.get('/delete-prod/:id', async(req,res) => {
+    try{
+        const {id} = req.params
+        await pool.query('DELETE FROM products WHERE id=?', [id]);
+        res.redirect('/list-prod');
+    }catch(error){
+        res.status(500).json({message: error.message});
+    };
+});
 
 export default prodRouter;
